@@ -1,8 +1,7 @@
 require 'pry'
 require_relative '../config/environment'
 #authors
-alex 
-= Author.new("Alex Irungu")
+ian = Author.new("Ian Munene")
 jeff = Author.new("Jeff Maina")
 sandra = Author.new("Sabdra Chepkoech")
 #magazines
