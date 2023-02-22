@@ -1,0 +1,71 @@
+require 'pry'
+require_relative '../config/environment'
+#authors
+alex 
+= Author.new("Alex Irungu")
+jeff = Author.new("Jeff Maina")
+sandra = Author.new("Sabdra Chepkoech")
+#magazines
+time = Magazine.new("Time" , "Code")
+vogue = Magazine.new("Vogue" , "fashion")
+forbes = Magazine.new("Forbes" , "Business")
+#articles
+ruby = Article.new(alex, time, "Ruby")
+#enter author
+puts "Enter Author: "
+auth_name = gets.chomp
+author = Author.new(auth_name)
+puts author.name
+#enter magazine name
+puts "Enter Magazine Name:  "
+mag_name = gets.chomp
+#enter magazine category
+puts "Enter Magazine Category:   "
+mag_category = gets.chomp
+#print
+new_mag = Magazine.new(mag_name, mag_category)
+puts new_mag.name
+puts new_mag.category
+#enter article
+puts "Enter Article:   "
+article_title = gets.chomp
+#print
+new_article = Article.new(author, new_mag, article_title)
+puts new_article.author
+# Getting all authors
+puts "Please Enter 'a' to get all authors"
+input = gets.chomp
+if input == "a"
+    Author.all.each {|author| puts "Author: #{author.name}"}
+end
+# Getting all magazines
+puts "Kindly enter 'm' to get all magazines."
+input = gets.chomp
+if input == "m"
+    Magazine.all.each{|magazine| puts "magazine name: #{magazine.name}"}
+end
+# Getting all articles
+puts "Kindly enter 'a' to get all articles"
+input = gets.chomp
+if input == "a"
+    Article.all.each{|article| puts "article title: #{article.title}"}
+end
+#Getting all topics
+puts "Kindly enter 't' to get all topics:"
+input = gets.chomp
+if input == "t"
+  Magazine.all.each {|magazine| puts "magazine topic: #{magazine.category}"}
+end
+# Finding magazine by name
+puts "Kindly enter the magazine name you would like to find:"
+input = gets.chomp
+search = Magazine.find_by_name(input)
+puts "#{search.name}"
+#Finding article titles by magazine name
+puts "Kindly enter name of magazine you would like to find the article titles for:"
+input = gets.chomp
+ puts "#{new_mag.article_titles}"
+ #Getting contributing_authors by magazine name
+ puts "Kindly enter  magazine name you would like to find the contributing authors for:"
+ input = gets.chomp
+ puts "#{new_mag.contributing_authors}"
