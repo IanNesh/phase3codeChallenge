@@ -10,7 +10,7 @@ class Magazine
     def self.all
       @@all
     end
-    def add_article(article)
+    def add_article(article) 
       @articles << article
       article.magazine = self
     end

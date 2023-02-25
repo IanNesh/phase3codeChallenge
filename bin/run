@@ -3,13 +3,13 @@ require_relative '../config/environment'
 #authors
 ian = Author.new("Ian Munene")
 jeff = Author.new("Jeff Maina")
-sandra = Author.new("Sabdra Chepkoech")
+sandra = Author.new("Sandra Chepkoech")
 #magazines
 time = Magazine.new("Time" , "Code")
 vogue = Magazine.new("Vogue" , "fashion")
 forbes = Magazine.new("Forbes" , "Business")
 #articles
-ruby = Article.new(alex, time, "Ruby")
+ruby = Article.new(ian, time, "Ruby")
 #enter author
 puts "Enter Author: "
 auth_name = gets.chomp
